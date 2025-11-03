@@ -33,3 +33,17 @@ Here's the converted table:
 | **非功能性指标 (20分)** | 代码质量与文档 (10)   | 代码风格清晰、注释充分，提供详尽的设计文档、架构图和用户指南（README）。                             |
 |                         | 性能与稳定性 (10)     | 包括自主规划的稳定性、NL2SQL 等的准确率、多次重复执行后报告的差异度等。                              |
 
+## 相关文件和代码
+
+* pom.xml: 包含项目依赖项，包括Spring AI Alibaba。
+* src/main/java/com/example/dataagent/DataAgentApplication.java: 应用程序主入口
+* src/main/resources/application.properties: 在这里配置你的应用程序
+
+ ## Next
+ 
+   1. Get an API Key: Obtain your API key from Alibaba Cloud Model Studio 
+      (https://www.aliyun.com/product/modelstudio).
+   2. Configure API Key: Replace YOUR_API_KEY in src/main/resources/application.properties with the key you
+      obtained.
+   3. Build and Run: You can now build and run your application using Maven.
+   4. Start Developing: Begin implementing your DataAgent's features as described in the README.md.
