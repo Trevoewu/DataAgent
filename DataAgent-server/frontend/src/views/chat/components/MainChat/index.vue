@@ -207,8 +207,8 @@ const onSubmit = async (evt) => {
   });
 
   try {
-    // 模拟与后端交互
-    const response = await simulateBackendInteraction(messageContent);
+    // 调用真实的LLM API
+    const response = await callLLMApi(messageContent);
 
     // 更新模型回复
     messages.value[loadingIndex] = {
@@ -227,23 +227,33 @@ const onSubmit = async (evt) => {
 };
 
 // 模拟API调用的方法
-const simulateBackendInteraction = async (userMessage: string) => {
-  // 模拟网络请求延迟
-  return new Promise<string>((resolve) => {
-    setTimeout(() => {
-      // 模拟不同的回复内容
-      const responses = [
-        `我已经收到您的消息："${userMessage}"，正在处理中...`,
-        `关于"${userMessage}"，我建议您可以参考相关文档获取更多信息。`,
-        `感谢您的提问："${userMessage}"，这是我为您生成的回复内容。`,
-        `针对"${userMessage}"问题，我已经为您准备了详细的解答。`,
-      ];
-      const randomResponse =
-        responses[Math.floor(Math.random() * responses.length)];
-      resolve(randomResponse);
-    }, 1000 + Math.random() * 2000); // 1-3秒的随机延迟
+const callLLMApi = async (userMessage: string) => {
+  const apiKey = import.meta.env.VITE_BAISHAN_API_KEY;
+  if (!apiKey) {
+    throw new Error("BAISHAN_API_KEY is not set in environment variables.");
+  }
+
+  const response = await fetch("https://api.edgefn.net/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "DeepSeek-R1-0528-Qwen3-8B",
+      messages: [{ role: "user", content: userMessage }],
+    }),
   });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error.message || "LLM API request failed");
+  }
+
+  const data = await response.json();
+  return data.choices[0].message.content;
 };
+
 </script>
 
 <style>
