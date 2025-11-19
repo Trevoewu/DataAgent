@@ -1,0 +1,27 @@
+{
+  "name": "dataagentweb",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@devui-design/icons": "^1.4.0",
+    "@matechat/core": "^1.10.0",
+    "ant-design-vue": "^4.2.6",
+    "element-plus": "^2.11.8",
+    "vue": "^3.5.22",
+    "vue-devui": "^1.6.34",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "sass": "^1.94.1",
+    "sass-embedded": "^1.93.3",
+    "sass-loader": "^16.0.6",
+    "vite": "^7.1.7"
+  }
+}
