@@ -175,8 +175,8 @@ const simplePrompt = [
 const startPage = ref(true);
 const inputValue = ref("");
 const inputFootIcons = [
-  { icon: "icon-at", text: "智能体" },
-  { icon: "icon-standard", text: "词库" },
+  // { icon: "icon-at", text: "智能体" },
+  // { icon: "icon-standard", text: "词库" },
   { icon: "icon-add", text: "附件" },
 ];
 
@@ -227,21 +227,37 @@ const onSubmit = async (evt) => {
 };
 
 // 模拟API调用的方法
+// 修改后的 callLLMApi 函数
 const callLLMApi = async (userMessage: string) => {
   const apiKey = import.meta.env.VITE_BAISHAN_API_KEY;
   if (!apiKey) {
     throw new Error("BAISHAN_API_KEY is not set in environment variables.");
   }
 
+  // 构建包含历史上下文的消息数组
+  const historyMessages = messages.value.map((msg) => ({
+    role: msg.from === "user" ? "user" : "assistant",
+    content: msg.content,
+  }));
+
+  // 如果当前消息不在历史记录中，则添加到末尾
+  if (
+    !historyMessages.some(
+      (msg) => msg.content === userMessage && msg.role === "user"
+    )
+  ) {
+    historyMessages.push({ role: "user", content: userMessage });
+  }
+
   const response = await fetch("https://api.edgefn.net/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${apiKey}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
       model: "DeepSeek-R1-0528-Qwen3-8B",
-      messages: [{ role: "user", content: userMessage }],
+      messages: historyMessages,
     }),
   });
 
@@ -253,19 +269,20 @@ const callLLMApi = async (userMessage: string) => {
   const data = await response.json();
   return data.choices[0].message.content;
 };
-
 </script>
 
 <style>
 .container {
-  width: 1000px;
-  margin: 20px auto;
-  height: calc(100vh - 82px);
+  width: 100%;
+  /* margin: 1px; */
+  /* margin: 20px auto; */
+  /* height: calc(100vh - 82px); */
+  height: 100%;
   padding: 20px;
   gap: 8px;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 16px;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 16px; */
 }
 
 .content-container {

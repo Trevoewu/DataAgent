@@ -1,6 +1,6 @@
 <template>
   <div class="common-layout">
-    <el-container>
+    <el-container class="el-container">
       <el-container>
         <el-aside class="aside"><List></List></el-aside>
         <el-main><MainChat></MainChat></el-main>
@@ -24,5 +24,16 @@ const msg = ref("Hello Vue 3!");
 }
 .aside {
   background-color: #f3f0f0;
+}
+.common-layout {
+  height: 100vh;
+}
+.el-container {
+  height: 100%;
+}
+</style>
+<style>
+.el-main {
+  padding: 0px !important;
 }
 </style>

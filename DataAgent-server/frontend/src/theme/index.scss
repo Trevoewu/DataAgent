@@ -2,6 +2,9 @@ html,
 body {
   color: var(--font-color, #333);
   background-color: var(--bg-color, #fff);
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
  
 #app {
