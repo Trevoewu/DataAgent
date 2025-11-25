@@ -3,7 +3,7 @@ spring:
     name: DataAgent-server
   ai:
     dashscope:
-      api-key: sk-29698f6bcc3a4b2f8f7a104b6c99baf0
+      api-key: sk-5ae98efc18c04c57af84daa48ac9ad95
   datasource:
     url: jdbc:mysql://localhost:3306/meeting
     driver-class-name: com.mysql.cj.jdbc.Driver
