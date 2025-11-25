@@ -4,33 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f87e311-f646-4127-8242-6f722bad7849" name="更改" comment="init spring-boot 3.5.7">
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/public/vite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/assets/vue.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/hooks/useTheme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/style/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/theme/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/views/chat/components/List/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/views/chat/components/MainChat/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/views/chat/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAgent-server/frontend/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2f87e311-f646-4127-8242-6f722bad7849" name="更改" comment="修改样式，模拟chat方法增加传入历史上下文">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAgent-server/frontend/src/views/chat/components/MainChat/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DataAgent-server/frontend/src/views/chat/components/MainChat/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAgent-server/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/DataAgent-server/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAgent-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DataAgent-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAgent-server/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,8 +64,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.DataAgentServerApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/f/aiprogram/DataAgent/DataAgent-server/frontend",
@@ -87,6 +83,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dataagent.config" />
+      <recent name="com.dataagent.advisor" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="DataAgent" />
@@ -125,6 +127,9 @@
       <updated>1762175636891</updated>
       <workItem from="1762175638138" duration="1262000" />
       <workItem from="1763547625601" duration="607000" />
+      <workItem from="1763967513941" duration="615000" />
+      <workItem from="1763996254217" duration="233000" />
+      <workItem from="1764037619609" duration="17687000" />
     </task>
     <task id="LOCAL-00001" summary="init spring-boot 3.5.7">
       <option name="closed" value="true" />
@@ -134,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762176807634</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改样式，模拟chat方法增加传入历史上下文">
+      <option name="closed" value="true" />
+      <created>1763967571303</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763967571303</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +166,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init spring-boot 3.5.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="init spring-boot 3.5.7" />
+    <MESSAGE value="修改样式，模拟chat方法增加传入历史上下文" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改样式，模拟chat方法增加传入历史上下文" />
   </component>
 </project>

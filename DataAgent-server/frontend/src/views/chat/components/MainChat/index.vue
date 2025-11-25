@@ -126,6 +126,7 @@
 import { ref, reactive } from "vue";
 import { Button } from "vue-devui/button";
 import "vue-devui/button/style.css";
+import { chatLLM } from "@/api/chat";
 
 // 添加AI能力状态管理
 const aiCapabilities = reactive({
@@ -248,25 +249,17 @@ const callLLMApi = async (userMessage: string) => {
   ) {
     historyMessages.push({ role: "user", content: userMessage });
   }
-
-  const response = await fetch("https://api.edgefn.net/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: "DeepSeek-R1-0528-Qwen3-8B",
-      messages: historyMessages,
-    }),
-  });
-
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.error.message || "LLM API request failed");
-  }
-
-  const data = await response.json();
+  // 先只传当前消息，还没做上下文
+  const json = {
+    prompt: userMessage,
+    baseUrl: "https://api.edgefn.net/v1/chat/completions",
+    apiKey: apiKey,
+    modelId: "DeepSeek-R1-0528-Qwen3-8B",
+    chatId: "1",
+  };
+  const data1 = await chatLLM(json);
+  // 解析josn 数据
+  const data = JSON.parse(data1);
   return data.choices[0].message.content;
 };
 </script>
