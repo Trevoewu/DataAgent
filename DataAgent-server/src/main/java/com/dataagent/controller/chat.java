@@ -29,7 +29,7 @@ public class chat {
         response.setCharacterEncoding("UTF-8");
 
         // 直接使用传入的参数调用聊天服务
-        return chatService.chatRequest(chatDTO);
+        return chatService.chat(chatDTO);
     }
 
 }

@@ -252,15 +252,14 @@ const callLLMApi = async (userMessage: string) => {
   // 先只传当前消息，还没做上下文
   const json = {
     prompt: userMessage,
-    baseUrl: "https://api.edgefn.net/v1/chat/completions",
+    baseUrl: "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation", // Not used by backend but kept for structure
     apiKey: apiKey,
-    modelId: "DeepSeek-R1-0528-Qwen3-8B",
+    modelId: "qwen-plus",
     chatId: "1",
   };
   const data1 = await chatLLM(json);
-  // 解析josn 数据
-  const data = JSON.parse(data1);
-  return data.choices[0].message.content;
+  // The backend now returns the text content directly via Flux<String> stream
+  return data1;
 };
 </script>
 
